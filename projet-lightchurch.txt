@@ -1,0 +1,45 @@
+📝 Présentation du projet – Light Church
+
+Quoi ?
+Light Church est une plateforme et une application mobile qui permet de :
+	•	Lister toutes les églises de France et leurs informations à jour
+	•	Géolocaliser l’utilisateur pour lui proposer les églises et événements à proximité
+	•	Permettre aux églises de gérer elles-mêmes leurs informations et de créer des événements (cultes, évangélisations, baptêmes…)
+	•	Connecter les églises et les pasteurs entre eux pour faciliter la collaboration et les actions communes
+
+⸻
+
+Qu’est-ce que ça apporte ?
+
+Pour les utilisateurs :
+	•	Trouver facilement une église ou un événement proche de chez eux
+	•	Avoir toutes les informations en temps réel, fiables et à jour
+	•	S’inscrire à un événement sans fournir de données personnelles
+	•	Recevoir uniquement les notifications qu’ils souhaitent
+
+Pour les églises et pasteurs :
+	•	Gérer leur église et leurs événements de manière simple et autonome
+	•	Accéder à un réseau national d’églises et de pasteurs pour collaborer
+	•	Augmenter la visibilité de leurs événements et toucher plus de participants
+	•	Favoriser l’unité et la coordination au sein de la communauté chrétienne
+
+⸻
+
+Pourquoi ?
+	•	Aujourd’hui, il n’existe pas de solution centralisée et complète qui permette à la fois de trouver les églises et événements chrétiens partout en France, d’avoir des informations fiables et à jour, de gérer les églises et événements facilement, et de connecter les pasteurs entre eux
+	•	Les informations sont souvent dispersées, obsolètes ou difficiles d’accès
+	•	Les utilisateurs cherchent un moyen simple et sûr de se connecter à une église ou à un événement
+	•	Light Church rend visible et accessible toute la communauté chrétienne, tout en respectant totalement la vie privée
+
+⸻
+
+Quel problème ça résout ?
+	•	Les personnes ne savent pas où aller pour participer à un culte ou à un événement
+	•	Les églises peinent à communiquer et à organiser leurs événements efficacement
+	•	Les pasteurs ont peu d’outils pour collaborer et rester connectés entre eux
+	•	Les informations sur les églises et les événements sont dispersées et souvent périmées
+
+⸻
+
+💡 En résumé :
+Light Church connecte les utilisateurs aux églises et événements, et les églises entre elles, pour favoriser la participation, la collaboration et la visibilité, tout en garantissant la simplicité et le respect de la vie privée.
