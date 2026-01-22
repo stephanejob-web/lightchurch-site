@@ -154,7 +154,32 @@ body {
     padding: 100px 20px 60px;
     max-width: 1200px;
     margin: 0 auto;
+    margin: 0 auto;
     gap: 60px;
+    position: relative;
+    /* Context for absolute canvas */
+    overflow: hidden;
+    /* Contain the canvas */
+}
+
+#hero-network-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Behind content */
+    pointer-events: none;
+    opacity: 0.6;
+    /* Subtle effect */
+}
+
+.hero-content,
+.hero-image {
+    position: relative;
+    z-index: 1;
+    /* Above canvas */
 }
 
 .hero-content {

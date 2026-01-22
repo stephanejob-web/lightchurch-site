@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="header">
         <nav class="nav">
@@ -33,21 +35,42 @@
 
     <main>
         <section class="hero">
+            <canvas id="hero-network-canvas"></canvas>
             <div class="hero-content">
                 <h1>LightChurch</h1>
                 <p class="hero-subtitle">Toutes les églises. Tous les événements.<br>Une seule plateforme.</p>
-                <p class="hero-description">Fini l'éparpillement entre Facebook, Google et les sites web. <strong>LightChurch centralise tout</strong> : églises, horaires, événements. Visible par tous, accessible en un clic.</p>
+                <p class="hero-description">Fini l'éparpillement entre Facebook, Google et les sites web.
+                    <strong>LightChurch centralise tout</strong> : églises, horaires, événements. Visible par tous,
+                    accessible en un clic.</p>
                 <div class="trust-badges">
                     <div class="trust-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 7h-9" />
+                            <path d="M14 17H5" />
+                            <circle cx="17" cy="17" r="3" />
+                            <circle cx="7" cy="7" r="3" />
+                        </svg>
                         <span>Toute l'info centralisée</span>
                     </div>
                     <div class="trust-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 2v4" />
+                            <path d="M16 2v4" />
+                            <rect width="18" height="18" x="3" y="4" rx="2" />
+                            <path d="M3 10h18" />
+                        </svg>
                         <span>Événements visibles instantanément</span>
                     </div>
                     <div class="trust-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
                         <span>Réseau pastoral national</span>
                     </div>
                 </div>
@@ -76,22 +99,27 @@
                     <div class="problem-card">
                         <div class="problem-icon">&#128546;</div>
                         <h3>"Nos événements restent vides"</h3>
-                        <p>Vous organisez des cultes, des évangélisations, des baptêmes, des soirées de prière pour les malades... mais peu de monde vient. Pourtant, des gens cherchent — ils ne vous trouvent juste pas.</p>
+                        <p>Vous organisez des cultes, des évangélisations, des baptêmes, des soirées de prière pour les
+                            malades... mais peu de monde vient. Pourtant, des gens cherchent — ils ne vous trouvent
+                            juste pas.</p>
                     </div>
                     <div class="problem-card">
                         <div class="problem-icon">&#128561;</div>
                         <h3>"L'information est éparpillée partout"</h3>
-                        <p>Facebook, site web, Google, affiches, bouche-à-oreille... Vos infos sont dispersées aux quatre vents. Résultat : personne ne sait où chercher, et vous perdez des visiteurs.</p>
+                        <p>Facebook, site web, Google, affiches, bouche-à-oreille... Vos infos sont dispersées aux
+                            quatre vents. Résultat : personne ne sait où chercher, et vous perdez des visiteurs.</p>
                     </div>
                     <div class="problem-card">
                         <div class="problem-icon">&#128556;</div>
                         <h3>"On est isolés des autres églises"</h3>
-                        <p>Vous aimeriez collaborer avec d'autres pasteurs, organiser des événements communs, mais il n'existe aucun outil pour se connecter facilement à l'échelle nationale.</p>
+                        <p>Vous aimeriez collaborer avec d'autres pasteurs, organiser des événements communs, mais il
+                            n'existe aucun outil pour se connecter facilement à l'échelle nationale.</p>
                     </div>
                     <div class="problem-card">
                         <div class="problem-icon">&#128533;</div>
                         <h3>"Les infos sur nous sont fausses ou périmées"</h3>
-                        <p>Sur Google, les horaires sont faux. Sur les annuaires, l'adresse est obsolète. Vous n'avez aucun contrôle sur ce que les gens trouvent quand ils vous cherchent.</p>
+                        <p>Sur Google, les horaires sont faux. Sur les annuaires, l'adresse est obsolète. Vous n'avez
+                            aucun contrôle sur ce que les gens trouvent quand ils vous cherchent.</p>
                     </div>
                 </div>
             </div>
@@ -100,40 +128,77 @@
         <section id="solution" class="section section-solution">
             <div class="container">
                 <h2>LightChurch : Toute l'Info au Même Endroit</h2>
-                <p class="section-intro">Fini l'éparpillement. <strong>Une seule plateforme</strong> où toutes les églises et tous les événements de France sont centralisés, visibles et à jour.</p>
+                <p class="section-intro">Fini l'éparpillement. <strong>Une seule plateforme</strong> où toutes les
+                    églises et tous les événements de France sont centralisés, visibles et à jour.</p>
 
                 <div class="bento-grid">
                     <div class="bento-card bento-large">
                         <div class="bento-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.3-4.3" />
+                            </svg>
                         </div>
                         <span class="bento-number">01</span>
                         <h3>Trouvable en 2 secondes</h3>
-                        <p>Une personne cherche une église ? Elle vous trouve instantanément avec vos horaires, votre adresse et vos événements — toujours à jour.</p>
+                        <p>Une personne cherche une église ? Elle vous trouve instantanément avec vos horaires, votre
+                            adresse et vos événements — toujours à jour.</p>
                     </div>
                     <div class="bento-card bento-medium">
                         <div class="bento-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.8 14-3.5 2"/><path d="m20.7 16-3.5-2"/><path d="M6.8 10 3.3 8"/><path d="m20.7 8-3.5 2"/><circle cx="12" cy="12" r="6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v4" />
+                                <path d="m6.8 14-3.5 2" />
+                                <path d="m20.7 16-3.5-2" />
+                                <path d="M6.8 10 3.3 8" />
+                                <path d="m20.7 8-3.5 2" />
+                                <circle cx="12" cy="12" r="6" />
+                            </svg>
                         </div>
                         <span class="bento-number">02</span>
                         <h3>Infos mises à jour en temps réel</h3>
-                        <p>Vous modifiez vos horaires ou ajoutez un événement ? C'est visible immédiatement. Fini les informations périmées sur Google.</p>
+                        <p>Vous modifiez vos horaires ou ajoutez un événement ? C'est visible immédiatement. Fini les
+                            informations périmées sur Google.</p>
                     </div>
                     <div class="bento-card bento-medium">
                         <div class="bento-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 2v4" />
+                                <path d="M16 2v4" />
+                                <rect width="18" height="18" x="3" y="4" rx="2" />
+                                <path d="M3 10h18" />
+                                <path d="m9 16 2 2 4-4" />
+                            </svg>
                         </div>
                         <span class="bento-number">03</span>
                         <h3>Événements qui se remplissent</h3>
-                        <p>Vos cultes, évangélisations, baptêmes sont vus par tous ceux qui cherchent autour de vous. Les inscriptions arrivent en un clic.</p>
+                        <p>Vos cultes, évangélisations, baptêmes sont vus par tous ceux qui cherchent autour de vous.
+                            Les inscriptions arrivent en un clic.</p>
                     </div>
                     <div class="bento-card bento-large">
                         <div class="bento-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34"/><path d="M3 15h6"/><path d="M3 11h3"/><circle cx="18" cy="12" r="5"/><path d="m18 9 .01 6"/><path d="m15 12 6 .01"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34" />
+                                <path d="M3 15h6" />
+                                <path d="M3 11h3" />
+                                <circle cx="18" cy="12" r="5" />
+                                <path d="m18 9 .01 6" />
+                                <path d="m15 12 6 .01" />
+                            </svg>
                         </div>
                         <span class="bento-number">04</span>
                         <h3>Connecté aux autres églises</h3>
-                        <p>Rejoignez un réseau pastoral national. Collaborez, organisez des événements communs, partagez vos ressources. L'union fait la force.</p>
+                        <p>Rejoignez un réseau pastoral national. Collaborez, organisez des événements communs, partagez
+                            vos ressources. L'union fait la force.</p>
                     </div>
                 </div>
             </div>
@@ -146,25 +211,52 @@
                 <div class="impact-flow">
                     <div class="flow-step">
                         <div class="flow-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                <path
+                                    d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
+                            </svg>
                         </div>
                         <p><strong>Vous</strong> créez un événement</p>
                     </div>
                     <div class="flow-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+                                <path d="M12 12v9" />
+                                <path d="m8 17 4 4 4-4" />
+                            </svg>
                         </div>
                         <p>LightChurch le <strong>diffuse</strong></p>
                     </div>
                     <div class="flow-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
                         </div>
                         <p>Votre audience <strong>s'élargit</strong></p>
                     </div>
@@ -235,12 +327,19 @@
         <section id="pourquoi" class="section section-why">
             <div class="container">
                 <h2>Pourquoi maintenant ?</h2>
-                <p class="section-intro">Le digital est devenu incontournable. Les églises ne peuvent plus se permettre d'être invisibles.</p>
+                <p class="section-intro">Le digital est devenu incontournable. Les églises ne peuvent plus se permettre
+                    d'être invisibles.</p>
 
                 <div class="why-grid">
                     <div class="why-card why-constat">
                         <div class="why-header">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 16v-4" />
+                                <path d="M12 8h.01" />
+                            </svg>
                             <span>Le constat</span>
                         </div>
                         <ul class="why-list">
@@ -252,7 +351,16 @@
                     </div>
                     <div class="why-card why-opportunite">
                         <div class="why-header">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.8 14-3.5 2"/><path d="m20.7 16-3.5-2"/><path d="M6.8 10 3.3 8"/><path d="m20.7 8-3.5 2"/><circle cx="12" cy="12" r="6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2v4" />
+                                <path d="m6.8 14-3.5 2" />
+                                <path d="m20.7 16-3.5-2" />
+                                <path d="M6.8 10 3.3 8" />
+                                <path d="m20.7 8-3.5 2" />
+                                <circle cx="12" cy="12" r="6" />
+                            </svg>
                             <span>L'opportunité</span>
                         </div>
                         <ul class="why-list">
@@ -271,7 +379,8 @@
                 <div class="network-header">
                     <span class="network-icon-main">&#127760;</span>
                     <h2>Un Réseau National pour Connecter les Églises</h2>
-                    <p class="section-intro">LightChurch crée un pont entre les pasteurs, les responsables et les églises de toute la France pour favoriser l'unité, la collaboration et l'action commune.</p>
+                    <p class="section-intro">LightChurch crée un pont entre les pasteurs, les responsables et les
+                        églises de toute la France pour favoriser l'unité, la collaboration et l'action commune.</p>
                 </div>
 
                 <div class="network-visual">
@@ -313,37 +422,43 @@
                     <div class="network-card">
                         <div class="network-card-icon">&#128172;</div>
                         <h3>Communication Directe</h3>
-                        <p>Les pasteurs peuvent échanger directement entre eux, partager des informations et coordonner leurs actions à l'échelle locale ou nationale.</p>
+                        <p>Les pasteurs peuvent échanger directement entre eux, partager des informations et coordonner
+                            leurs actions à l'échelle locale ou nationale.</p>
                     </div>
 
                     <div class="network-card">
                         <div class="network-card-icon">&#129309;</div>
                         <h3>Collaboration Inter-Églises</h3>
-                        <p>Organisez des événements communs entre plusieurs églises : cultes régionaux, évangélisations, formations, conférences pastorales.</p>
+                        <p>Organisez des événements communs entre plusieurs églises : cultes régionaux, évangélisations,
+                            formations, conférences pastorales.</p>
                     </div>
 
                     <div class="network-card">
                         <div class="network-card-icon">&#128197;</div>
                         <h3>Événements Partagés</h3>
-                        <p>Créez des événements visibles par toutes les églises du réseau. Invitez d'autres communautés à participer ou co-organiser.</p>
+                        <p>Créez des événements visibles par toutes les églises du réseau. Invitez d'autres communautés
+                            à participer ou co-organiser.</p>
                     </div>
 
                     <div class="network-card">
                         <div class="network-card-icon">&#127919;</div>
                         <h3>Actions Communes</h3>
-                        <p>Lancez des initiatives nationales : journées de prière, campagnes d'évangélisation, collectes solidaires coordonnées.</p>
+                        <p>Lancez des initiatives nationales : journées de prière, campagnes d'évangélisation, collectes
+                            solidaires coordonnées.</p>
                     </div>
 
                     <div class="network-card">
                         <div class="network-card-icon">&#128218;</div>
                         <h3>Annuaire des Responsables</h3>
-                        <p>Accédez à l'annuaire des pasteurs et responsables. Trouvez facilement un contact dans une autre région ou dénomination.</p>
+                        <p>Accédez à l'annuaire des pasteurs et responsables. Trouvez facilement un contact dans une
+                            autre région ou dénomination.</p>
                     </div>
 
                     <div class="network-card">
                         <div class="network-card-icon">&#128161;</div>
                         <h3>Partage de Ressources</h3>
-                        <p>Partagez vos bonnes pratiques, supports de formation, et ressources avec l'ensemble de la communauté pastorale.</p>
+                        <p>Partagez vos bonnes pratiques, supports de formation, et ressources avec l'ensemble de la
+                            communauté pastorale.</p>
                     </div>
                 </div>
 
@@ -357,44 +472,51 @@
                 <div class="privacy-header">
                     <span class="privacy-shield">&#128737;</span>
                     <h2>Notre Engagement pour Votre Vie Privée</h2>
-                    <p class="section-intro">LightChurch place la protection de vos données au coeur de sa conception. Pas de compromis.</p>
+                    <p class="section-intro">LightChurch place la protection de vos données au coeur de sa conception.
+                        Pas de compromis.</p>
                 </div>
 
                 <div class="privacy-grid">
                     <div class="privacy-card">
                         <div class="privacy-icon">&#128274;</div>
                         <h3>Aucune donnée personnelle requise</h3>
-                        <p>Utilisez LightChurch sans créer de compte. Explorez les églises et événements en toute liberté, sans fournir email, téléphone ou autres informations personnelles.</p>
+                        <p>Utilisez LightChurch sans créer de compte. Explorez les églises et événements en toute
+                            liberté, sans fournir email, téléphone ou autres informations personnelles.</p>
                     </div>
 
                     <div class="privacy-card">
                         <div class="privacy-icon">&#128683;</div>
                         <h3>Zéro tracking publicitaire</h3>
-                        <p>Aucun cookie de tracking, aucune publicité ciblée, aucune revente de données. Votre navigation reste privée et n'est jamais monétisée.</p>
+                        <p>Aucun cookie de tracking, aucune publicité ciblée, aucune revente de données. Votre
+                            navigation reste privée et n'est jamais monétisée.</p>
                     </div>
 
                     <div class="privacy-card">
                         <div class="privacy-icon">&#128205;</div>
                         <h3>Géolocalisation respectueuse</h3>
-                        <p>La géolocalisation est utilisée uniquement pour vous montrer les églises proches. Elle n'est jamais stockée sur nos serveurs ni partagée.</p>
+                        <p>La géolocalisation est utilisée uniquement pour vous montrer les églises proches. Elle n'est
+                            jamais stockée sur nos serveurs ni partagée.</p>
                     </div>
 
                     <div class="privacy-card">
                         <div class="privacy-icon">&#128276;</div>
                         <h3>Notifications sur demande</h3>
-                        <p>Vous décidez quelles notifications recevoir. Aucune sollicitation non désirée, aucun spam. Vous gardez le contrôle total.</p>
+                        <p>Vous décidez quelles notifications recevoir. Aucune sollicitation non désirée, aucun spam.
+                            Vous gardez le contrôle total.</p>
                     </div>
 
                     <div class="privacy-card">
                         <div class="privacy-icon">&#128100;</div>
                         <h3>Inscription anonyme aux événements</h3>
-                        <p>Participez aux événements sans révéler votre identité. Les organisateurs voient le nombre de participants, pas qui ils sont.</p>
+                        <p>Participez aux événements sans révéler votre identité. Les organisateurs voient le nombre de
+                            participants, pas qui ils sont.</p>
                     </div>
 
                     <div class="privacy-card">
                         <div class="privacy-icon">&#128272;</div>
                         <h3>Données chiffrées</h3>
-                        <p>Toutes les communications sont chiffrées. Les données des pasteurs et églises sont sécurisées selon les standards les plus stricts.</p>
+                        <p>Toutes les communications sont chiffrées. Les données des pasteurs et églises sont sécurisées
+                            selon les standards les plus stricts.</p>
                     </div>
                 </div>
 
@@ -444,7 +566,8 @@
                     <div class="feature-info">
                         <span class="feature-tag">Espace Public</span>
                         <h3>Carte Interactive des Églises</h3>
-                        <p>Les utilisateurs peuvent explorer une carte interactive affichant toutes les églises de France. Filtres par localisation, dénomination, horaires et événements à venir.</p>
+                        <p>Les utilisateurs peuvent explorer une carte interactive affichant toutes les églises de
+                            France. Filtres par localisation, dénomination, horaires et événements à venir.</p>
                     </div>
                     <div class="feature-gallery">
                         <div class="macbook-mockup">
@@ -462,9 +585,12 @@
                                         </div>
                                     </div>
                                     <div class="browser-content">
-                                        <img src="maps-public/map-1.png" alt="Carte interactive" class="gallery-img active" data-index="0">
-                                        <img src="maps-public/map-2.png" alt="Vue détaillée carte" class="gallery-img" data-index="1">
-                                        <img src="maps-public/map-3.png" alt="Filtres carte" class="gallery-img" data-index="2">
+                                        <img src="maps-public/map-1.png" alt="Carte interactive"
+                                            class="gallery-img active" data-index="0">
+                                        <img src="maps-public/map-2.png" alt="Vue détaillée carte" class="gallery-img"
+                                            data-index="1">
+                                        <img src="maps-public/map-3.png" alt="Filtres carte" class="gallery-img"
+                                            data-index="2">
                                     </div>
                                 </div>
                             </div>
@@ -484,7 +610,8 @@
                     <div class="feature-info">
                         <span class="feature-tag">Espace Pastoral</span>
                         <h3>Tableau de Bord pour les Pasteurs</h3>
-                        <p>Un espace dédié permettant aux pasteurs de gérer leur église, créer et suivre leurs événements, gérer les horaires et accéder au réseau pastoral national.</p>
+                        <p>Un espace dédié permettant aux pasteurs de gérer leur église, créer et suivre leurs
+                            événements, gérer les horaires et accéder au réseau pastoral national.</p>
                     </div>
                     <div class="feature-gallery">
                         <div class="macbook-mockup">
@@ -502,13 +629,20 @@
                                         </div>
                                     </div>
                                     <div class="browser-content">
-                                        <img src="espace-pastoral/dashboard.png" alt="Dashboard pastoral" class="gallery-img active" data-index="0">
-                                        <img src="espace-pastoral/dashboard-mon-eglise.png" alt="Mon église" class="gallery-img" data-index="1">
-                                        <img src="espace-pastoral/dashboard-mon-eglise-horaires.png" alt="Horaires église" class="gallery-img" data-index="2">
-                                        <img src="espace-pastoral/mes-evenements.png" alt="Mes événements" class="gallery-img" data-index="3">
-                                        <img src="espace-pastoral/mes-evenements-1.png" alt="Détail événement" class="gallery-img" data-index="4">
-                                        <img src="espace-pastoral/mon-profil.png" alt="Mon profil" class="gallery-img" data-index="5">
-                                        <img src="espace-pastoral/reseau-pastoral.png" alt="Réseau pastoral" class="gallery-img" data-index="6">
+                                        <img src="espace-pastoral/dashboard.png" alt="Dashboard pastoral"
+                                            class="gallery-img active" data-index="0">
+                                        <img src="espace-pastoral/dashboard-mon-eglise.png" alt="Mon église"
+                                            class="gallery-img" data-index="1">
+                                        <img src="espace-pastoral/dashboard-mon-eglise-horaires.png"
+                                            alt="Horaires église" class="gallery-img" data-index="2">
+                                        <img src="espace-pastoral/mes-evenements.png" alt="Mes événements"
+                                            class="gallery-img" data-index="3">
+                                        <img src="espace-pastoral/mes-evenements-1.png" alt="Détail événement"
+                                            class="gallery-img" data-index="4">
+                                        <img src="espace-pastoral/mon-profil.png" alt="Mon profil" class="gallery-img"
+                                            data-index="5">
+                                        <img src="espace-pastoral/reseau-pastoral.png" alt="Réseau pastoral"
+                                            class="gallery-img" data-index="6">
                                     </div>
                                 </div>
                             </div>
@@ -532,7 +666,8 @@
                     <div class="feature-info">
                         <span class="feature-tag">Espace Administration</span>
                         <h3>Gestion Centralisée</h3>
-                        <p>Interface d'administration complète pour gérer les utilisateurs, valider les églises, superviser les événements et accéder aux statistiques de la plateforme.</p>
+                        <p>Interface d'administration complète pour gérer les utilisateurs, valider les églises,
+                            superviser les événements et accéder aux statistiques de la plateforme.</p>
                     </div>
                     <div class="feature-gallery">
                         <div class="macbook-mockup">
@@ -550,7 +685,8 @@
                                         </div>
                                     </div>
                                     <div class="browser-content browser-video">
-                                        <video autoplay muted loop playsinline poster="espace-admin/admin-dashboard.png">
+                                        <video autoplay muted loop playsinline
+                                            poster="espace-admin/admin-dashboard.png">
                                             <source src="admin.mov" type="video/mp4">
                                         </video>
                                     </div>
@@ -568,7 +704,8 @@
         <section id="mobile" class="section section-mobile">
             <div class="container">
                 <h2>LightChurch dans votre Poche</h2>
-                <p class="section-intro">Une expérience fluide et intuitive, conçue pour vous accompagner partout. Disponible sur iOS et Android.</p>
+                <p class="section-intro">Une expérience fluide et intuitive, conçue pour vous accompagner partout.
+                    Disponible sur iOS et Android.</p>
 
                 <div class="mobile-showcase">
                     <!-- Main Video Display -->
@@ -735,8 +872,11 @@
                 <div class="summary-content">
                     <h2>Prêt à être visible ?</h2>
                     <p class="summary-text">
-                        LightChurch, c'est <strong>plus de visibilité</strong> pour vos événements, <strong>plus de participants</strong> à vos cultes, et <strong>un réseau pastoral</strong> pour ne plus être seuls.<br><br>
-                        Tout ça, dans le <strong>respect total de la vie privée</strong> — la vôtre et celle de vos fidèles.
+                        LightChurch, c'est <strong>plus de visibilité</strong> pour vos événements, <strong>plus de
+                            participants</strong> à vos cultes, et <strong>un réseau pastoral</strong> pour ne plus être
+                        seuls.<br><br>
+                        Tout ça, dans le <strong>respect total de la vie privée</strong> — la vôtre et celle de vos
+                        fidèles.
                     </p>
                     <div class="summary-cta">
                         <p class="summary-tagline">C'est exactement ce qu'il vous faut.</p>
@@ -760,5 +900,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="network-animation.js"></script>
 </body>
+
 </html>
