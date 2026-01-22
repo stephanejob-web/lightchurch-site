@@ -25,6 +25,9 @@ body {
     line-height: 1.6;
     color: var(--dark);
     background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -43,6 +46,30 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header--hidden {
+    transform: translateY(-100%);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 1001;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--gradient);
+    width: 0%;
+    transition: width 0.1s;
+    border-radius: 0 3px 3px 0;
 }
 
 .nav {
@@ -84,6 +111,23 @@ body {
     color: var(--primary);
 }
 
+.nav-links a.active {
+    color: var(--primary);
+    position: relative;
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -119,12 +163,16 @@ body {
 
 .hero h1 {
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 800;
+    /* Bolder for more impact */
+    letter-spacing: -0.02em;
+    /* Tighter tracking for headlines */
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
@@ -249,7 +297,11 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
 }
 
 /* Sections */
@@ -259,6 +311,8 @@ body {
 
 .section h2 {
     font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     text-align: center;
     margin-bottom: 20px;
     color: var(--dark);
@@ -294,12 +348,15 @@ body {
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+    /* Prepare for border transition */
 }
 
 .problem-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(79, 70, 229, 0.3);
 }
 
 .problem-icon {
@@ -309,6 +366,8 @@ body {
 
 .problem-card h3 {
     font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     margin-bottom: 15px;
     color: var(--dark);
 }
@@ -1701,6 +1760,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -1917,9 +1977,12 @@ body {
     }
 
     @keyframes bounce-down {
-        0%, 100% {
+
+        0%,
+        100% {
             transform: rotate(90deg) translateX(0);
         }
+
         50% {
             transform: rotate(90deg) translateX(5px);
         }

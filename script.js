@@ -128,15 +128,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Header shadow on scroll
+
+    // Smart Navbar & Scroll Progress
     const header = document.querySelector('.header');
+    let lastScrollY = window.scrollY;
+    
+    // Create Scroll Progress Bar
+    const progressBarContainer = document.createElement('div');
+    progressBarContainer.className = 'scroll-progress-container';
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-bar';
+    progressBarContainer.appendChild(progressBar);
+    header.appendChild(progressBarContainer);
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        const currentScrollY = window.scrollY;
+        
+        // Header Shadow
+        if (currentScrollY > 50) {
             header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            header.style.background = 'rgba(255, 255, 255, 0.98)'; // More opaque on scroll
         } else {
             header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
         }
+
+        // Smart Hide/Show
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            header.classList.add('header--hidden');
+        } else {
+            header.classList.remove('header--hidden');
+        }
+        lastScrollY = currentScrollY;
+
+        // Update Scroll Progress Bar
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + "%";
     });
+
+    // Active Link Highlighting with Intersection Observer
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    const activeLinkObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const currentId = entry.target.getAttribute('id');
+                navItems.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, {
+        rootMargin: '-50% 0px -50% 0px' // Trigger when section is in middle of viewport
+    });
+
+    sections.forEach(section => activeLinkObserver.observe(section));
+
 
     // Animate elements on scroll
     const observerOptions = {
