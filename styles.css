@@ -1653,11 +1653,12 @@ body {
 }
 
 .browser-header {
-    background: linear-gradient(180deg, #3d3d3d 0%, #2d2d2d 100%);
+    background: #f1f5f9;
     padding: 12px 16px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .browser-buttons {
@@ -1727,51 +1728,129 @@ body {
 }
 
 /* MacBook Mockup */
+/* MacBook Mockup - Realistic PRO */
 .macbook-mockup {
     position: relative;
     max-width: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .macbook-screen {
-    background: #1a1a1a;
-    border-radius: 16px 16px 0 0;
+    background: #0d0d0d;
+    border-radius: 20px 20px 0 0;
     padding: 12px 12px 0 12px;
-    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 0 2px #3a3a3a;
+    /* Frame/Bezel inner */
+    position: relative;
+    z-index: 10;
+}
+
+/* Screen Gloss/Reflection */
+.macbook-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 40%, transparent 100%);
+    pointer-events: none;
+    border-radius: 18px 18px 0 0;
+    z-index: 20;
 }
 
 .macbook-screen .browser-mockup {
     border-radius: 8px 8px 0 0;
     box-shadow: none;
+    position: relative;
+    z-index: 5;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Browser Header Refinement */
+.browser-header {
+    background: #EFEFEF;
+    /* Lighter modern macOS style */
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+.browser-address {
+    background: #FFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 6px;
+    padding: 5px 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.browser-address-text {
+    color: #444;
+    font-weight: 500;
 }
 
 .macbook-base {
-    background: linear-gradient(180deg, #c4c4c4 0%, #a8a8a8 100%);
-    height: 18px;
-    border-radius: 0 0 8px 8px;
+    background: linear-gradient(to bottom, #dedede 0%, #cfcfcf 50%, #8a8a8a 100%);
+    height: 24px;
+    border-radius: 0 0 16px 16px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    z-index: 9;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    /* Deep realistic shadow */
+    margin-top: -1px;
 }
 
+/* The thumb notch for opening */
 .macbook-base::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 40%;
-    height: 4px;
-    background: linear-gradient(180deg, #d4d4d4 0%, #b8b8b8 100%);
-    border-radius: 0 0 4px 4px;
+    width: 15%;
+    height: 8px;
+    background: #bababa;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Rubber feet shadow simulation */
+.macbook-base::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 5%;
+    width: 90%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    filter: blur(15px);
+    z-index: -1;
+    border-radius: 50%;
 }
 
 .macbook-notch {
-    width: 80px;
-    height: 6px;
-    background: linear-gradient(180deg, #888 0%, #666 100%);
-    border-radius: 0 0 4px 4px;
-    margin-top: -1px;
+    display: none;
+    /* Removed old notch, use bezel style */
+}
+
+/* Floating Animation */
+.macbook-mockup {
+    animation: floatMacbook 6s ease-in-out infinite;
+}
+
+@keyframes floatMacbook {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .gallery-dots {
