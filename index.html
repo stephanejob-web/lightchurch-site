@@ -45,34 +45,35 @@
                 </p>
                 <div class="hero-ecosystem">
                     <!-- SVG Layer for precise connections -->
-                    <svg class="eco-connections" viewBox="0 0 600 300">
+                    <svg class="eco-connections" viewBox="0 0 750 360">
                         <defs>
                             <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"
                                 markerUnits="strokeWidth">
                                 <path d="M0,0 L0,6 L9,3 z" fill="#4F46E5" />
                             </marker>
                         </defs>
-                        <!-- Connections to Hub -->
-                        <path d="M120,150 L260,150" class="eco-path flow-right" /> <!-- Lille -> Hub -->
-                        <path d="M300,50 L300,110" class="eco-path flow-down" /> <!-- Toulon -> Hub -->
-                        <path d="M300,250 L300,190" class="eco-path flow-up" /> <!-- Reunion -> Hub -->
-                        <path d="M480,150 L340,150" class="eco-path flow-left" /> <!-- Paris -> Hub -->
+                        <!-- Connections to Hub (Center Y=180) -->
+                        <path d="M110,180 L260,180" class="eco-path flow-right" /> <!-- Lille -> Hub -->
+                        <path d="M300,80 L300,140" class="eco-path flow-down" /> <!-- Toulon -> Hub -->
+                        <path d="M300,310 L300,220" class="eco-path flow-up" /> <!-- Reunion -> Hub -->
+                        <path d="M520,180 L340,180" class="eco-path flow-left" /> <!-- Paris -> Hub -->
 
                         <!-- Connections from Events to Lille -->
-                        <path d="M50,80 C50,150 50,150 80,150" class="eco-path flow-curved" /> <!-- Event 1 -> Lille -->
-                        <path d="M50,220 C50,150 50,150 80,150" class="eco-path flow-curved" />
+                        <path d="M50,110 C50,180 50,180 80,180" class="eco-path flow-curved" />
+                        <!-- Event 1 -> Lille -->
+                        <path d="M50,250 C50,180 50,180 80,180" class="eco-path flow-curved" />
                         <!-- Event 2 -> Lille -->
 
                         <!-- Connections from Events to Paris -->
-                        <path d="M550,80 C550,150 550,150 520,150" class="eco-path flow-curved" />
-                        <!-- Event 3 -> Paris -->
-                        <path d="M550,220 C550,150 550,150 520,150" class="eco-path flow-curved" />
-                        <!-- Event 4 -> Paris -->
+                        <path d="M580,110 C580,180 580,180 550,180" class="eco-path flow-curved" /> <!-- Event 3 -->
+                        <path d="M580,250 C580,180 580,180 550,180" class="eco-path flow-curved" /> <!-- Event 4 -->
 
-                        <!-- Hub to User -->
-                        <path d="M300,150 C400,150 400,250 500,280" class="eco-path flow-user" style="display:none;" />
-                        <!-- Hidden old path attempt -->
-                        <path d="M340,160 C400,200 450,260 540,280" class="eco-path flow-final" />
+                        <!-- Hub to Users (Centers: 60, 120, 180, 240, 300) -->
+                        <path d="M340,180 C450,180 600,60 710,60" class="eco-path flow-final" /> <!-- User 1 -->
+                        <path d="M340,180 C450,180 600,120 710,120" class="eco-path flow-final" /> <!-- User 2 -->
+                        <path d="M340,180 L710,180" class="eco-path flow-final" /> <!-- User 3 -->
+                        <path d="M340,180 C450,180 600,240 710,240" class="eco-path flow-final" /> <!-- User 4 -->
+                        <path d="M340,180 C450,180 600,300 710,300" class="eco-path flow-final" /> <!-- User 5 -->
                     </svg>
 
                     <!-- CENTRAL HUB -->
@@ -175,7 +176,9 @@
                     </div>
 
                     <!-- USER (Icon) -->
-                    <div class="eco-node node-user">
+                    <!-- USERS (Community Cluster - 5 Users) -->
+                    <!-- User 1 (Top) -->
+                    <div class="eco-node node-user node-user-1">
                         <div class="eco-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -184,7 +187,51 @@
                                 <circle cx="12" cy="7" r="4" />
                             </svg>
                         </div>
-                        <span class="node-label">Utilisateur</span>
+                    </div>
+                    <!-- User 2 -->
+                    <div class="eco-node node-user node-user-2">
+                        <div class="eco-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- User 3 (Middle) -->
+                    <div class="eco-node node-user node-user-3">
+                        <div class="eco-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <span class="node-label">Utilisateurs</span>
+                    </div>
+                    <!-- User 4 -->
+                    <div class="eco-node node-user node-user-4">
+                        <div class="eco-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- User 5 (Bottom) -->
+                    <div class="eco-node node-user node-user-5">
+                        <div class="eco-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
