@@ -479,7 +479,8 @@ body {
     }
 
     100% {
-        transform: scale(2);
+        transform: scale(7);
+        /* Expanded from 2 to 7 to cover full diagram */
         opacity: 0;
         border-width: 0px;
     }
