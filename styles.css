@@ -308,7 +308,7 @@ body {
     max-width: 100%;
 }
 
-/* SVG Connections */
+/* SVG Connections - Enhanced Data Flow */
 .eco-connections {
     position: absolute;
     top: 0;
@@ -317,30 +317,63 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
+    filter: drop-shadow(0 0 4px rgba(79, 70, 229, 0.5));
+    /* Glow effect */
 }
 
 .eco-path {
     fill: none;
     stroke: var(--primary);
-    stroke-width: 2;
-    stroke-dasharray: 8 4;
-    opacity: 0.6;
+    stroke-width: 3;
+    stroke-dasharray: 10 150;
+    /* Short dash, long gap = particle look */
+    stroke-linecap: round;
+    opacity: 0.8;
+    animation: flowDash 5s linear infinite;
 }
 
-/* Flow Animation on Lines */
-.eco-path {
-    stroke-dasharray: 10;
-    animation: flowDash 30s linear infinite;
+/* Background track for paths (optional, added via JS or just stick to particles) 
+   To keep it simple, we use the dasharray as particles over a transparent background. 
+   If we want a visible track, we'd need double paths. 
+   Let's stick to visible DASHES as particles.
+*/
+
+/* Specific Flows Direction */
+.flow-right {
+    animation: flowDash 4s linear infinite reverse;
 }
 
-/* Specific Flows */
+/* Left to Right */
+.flow-down {
+    animation: flowDash 4s linear infinite;
+}
+
+/* Top to Bottom */
+.flow-up {
+    animation: flowDash 4s linear infinite reverse;
+}
+
+/* Bottom to Top */
+.flow-left {
+    animation: flowDash 4s linear infinite;
+}
+
+/* Right to Left */
+
+.flow-curved {
+    animation: flowDash 4.5s linear infinite reverse;
+}
+
+/* The final beam to user needs to look faster/stronger */
 .flow-final {
-    stroke: var(--primary);
     stroke-width: 4;
-    stroke-dasharray: 10 5;
-    animation: flowDash 2s linear infinite reverse;
-    /* Flow TO user */
-    filter: drop-shadow(0 0 5px rgba(79, 70, 229, 0.5));
+    stroke-dasharray: 20 50;
+    /* Longer packet, shorter gap */
+    animation: flowDash 2.5s linear infinite reverse;
+    /* Hub to User */
+    stroke: #F59E0B;
+    /* Accent color for result */
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
 }
 
 @keyframes flowDash {
@@ -391,7 +424,7 @@ body {
     white-space: nowrap;
 }
 
-/* HUB (Center) */
+/* HUB (Center) - Shockwave Pulse */
 .eco-hub {
     position: absolute;
     left: 50%;
@@ -411,7 +444,22 @@ body {
     justify-content: center;
     box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
     border: 4px solid #fff;
-    animation: pulseHub 3s infinite ease-in-out;
+    /* Main pulse + Shockwave effect via pseudo-element */
+    position: relative;
+    animation: pulseHubCore 4.5s infinite ease-in-out;
+}
+
+.eco-hub-core::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    animation: shockwave 4.5s infinite ease-out;
+    opacity: 0;
 }
 
 .hub-text {
@@ -419,6 +467,35 @@ body {
     font-weight: 800;
     font-size: 1rem;
     text-transform: uppercase;
+    z-index: 2;
+}
+
+@keyframes shockwave {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+        border-width: 4px;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+        border-width: 0px;
+    }
+}
+
+@keyframes pulseHubCore {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(79, 70, 229, 0.5);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 60px rgba(79, 70, 229, 0.8);
+    }
 }
 
 /* NODE PLACEMENT (Matching SVG Coordinates) */
