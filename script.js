@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Accélérer les vidéos de présentation
+    document.querySelectorAll('.hero video, .mobile-main-display video').forEach(video => {
+        video.playbackRate = 1.5; // 1.5x plus rapide (ajuster entre 1.0 et 2.0)
+    });
+
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
