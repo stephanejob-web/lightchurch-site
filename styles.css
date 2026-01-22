@@ -503,8 +503,18 @@ body {
 }
 
 .flow-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.flow-icon svg {
+    color: white;
 }
 
 .flow-step p {
@@ -513,10 +523,11 @@ body {
 }
 
 .flow-arrow {
-    font-size: 2rem;
-    color: var(--secondary);
-    font-weight: bold;
-    animation: bounce-right 1s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    animation: bounce-right 1.5s ease-in-out infinite;
 }
 
 @keyframes bounce-right {
