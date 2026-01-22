@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Accélérer les vidéos de présentation
     document.querySelectorAll('.hero video, .mobile-main-display video').forEach(video => {
         video.playbackRate = 1.5; // 1.5x plus rapide (ajuster entre 1.0 et 2.0)
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function () {
         navLinks.classList.toggle('active');
         this.classList.toggle('active');
     });
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scroll for navigation with offset for fixed header
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smart Navbar & Scroll Progress
     const header = document.querySelector('.header');
     let lastScrollY = window.scrollY;
-    
+
     // Create Scroll Progress Bar
     const progressBarContainer = document.createElement('div');
     progressBarContainer.className = 'scroll-progress-container';
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         // Header Shadow
         if (currentScrollY > 50) {
             header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
@@ -166,6 +166,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         progressBar.style.width = scrolled + "%";
+
+        // Hero Parallax Effect
+        const heroSection = document.querySelector('.hero');
+        if (heroSection && currentScrollY <= heroSection.offsetHeight) {
+            const heroContent = document.querySelector('.hero-content');
+            const heroImage = document.querySelector('.hero-image');
+            const heroCanvas = document.getElementById('hero-network-canvas');
+
+            // Move content slower than scroll (0.4x speed)
+            if (heroContent) heroContent.style.transform = `translateY(${currentScrollY * 0.4}px)`;
+
+            // Move image slightly faster than content but slower than scroll (0.25x speed)
+            // This creates depth between text and image
+            if (heroImage) heroImage.style.transform = `translateY(${currentScrollY * 0.25}px)`;
+
+            // Canvas moves even slower (0.1x) to stay "far away"
+            if (heroCanvas) heroCanvas.style.transform = `translateY(${currentScrollY * 0.1}px)`;
+        }
     });
 
     // Active Link Highlighting with Intersection Observer
