@@ -648,13 +648,68 @@ body {
 }
 
 /* Responsive Scaling for Hero Diagram */
+/* Responsive Scaling for Hero Diagram - Optimized for 750px Width */
+@media (max-width: 850px) {
+    .hero-ecosystem {
+        transform: scale(0.8);
+        transform-origin: center top;
+        margin-bottom: -60px;
+    }
+}
+
 @media (max-width: 650px) {
     .hero-ecosystem {
-        transform: scale(0.7);
-        /* Scale down for tablets/small desktops */
+        transform: scale(0.55);
+        /* Fits 750px into ~412px */
         transform-origin: center top;
-        margin-bottom: -80px;
-        /* Reduce gap caused by scaling */
+        margin-bottom: -160px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero {
+        padding-top: 120px;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-ecosystem {
+        transform: scale(0.42);
+        /* Fits 750px into ~315px (small phones) */
+        transform-origin: center top;
+        margin-bottom: -200px;
+        left: -10px;
+        /* Slight nudge if needed */
+    }
+
+    .hero-content {
+        padding-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0;
+        line-height: 1.6 !important;
+        margin-bottom: 40px !important;
     }
 }
 
