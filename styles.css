@@ -301,8 +301,8 @@ body {
 /* HERO TOPOLOGY DIAGRAM (SVG Based) */
 .hero-ecosystem {
     position: relative;
-    width: 600px;
-    height: 300px;
+    width: 750px;
+    height: 360px;
     /* Matched to SVG viewBox */
     margin: 20px auto;
     max-width: 100%;
@@ -364,13 +364,14 @@ body {
     animation: flowDash 4.5s linear infinite reverse;
 }
 
-/* The final beam to user needs to look faster/stronger */
+/* The final beam to user needs to be strong but slower */
 .flow-final {
     stroke-width: 4;
     stroke-dasharray: 20 50;
     /* Longer packet, shorter gap */
-    animation: flowDash 2.5s linear infinite reverse;
-    /* Hub to User */
+    animation: flowDash 4s linear infinite;
+    /* REMOVED reverse, Increased to 4s */
+    /* Hub to User (Hub is Start M..., User is End) */
     stroke: #F59E0B;
     /* Accent color for result */
     filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
@@ -478,7 +479,8 @@ body {
     }
 
     100% {
-        transform: scale(2);
+        transform: scale(7);
+        /* Expanded from 2 to 7 to cover full diagram */
         opacity: 0;
         border-width: 0px;
     }
@@ -502,29 +504,29 @@ body {
 /* Hub is at 300, 150 */
 
 /* Lille: 100, 150 */
+/* Lille: 100, 180 (Center aligned) */
 .node-lille {
     left: 80px;
-    top: 120px;
+    top: 150px;
 }
 
-/* Toulon: 300, 50 */
+/* Toulon: 300, 80 */
 .node-toulon {
     left: 270px;
-    top: 20px;
+    top: 50px;
 }
 
-/* Reunion: 300, 250 */
+/* Reunion: 300, 310 */
 .node-reunion {
     left: 270px;
-    /* 300 - 30 */
-    top: 220px;
-    /* 250 - 30 */
+    top: 280px;
 }
 
 /* Paris: 480, 150 */
+/* Paris: 490, 180 (Center aligned) */
 .node-paris {
-    left: 450px;
-    top: 120px;
+    left: 490px;
+    top: 150px;
 }
 
 /* EVENTS - Smaller Nodes */
@@ -535,46 +537,78 @@ body {
     /* Lighter border */
 }
 
-/* Events for Lille (Start near 50,80 and 50,220) */
+/* Events for Lille (Shifted down +30) */
 .event-l1 {
     left: 30px;
-    top: 60px;
+    top: 90px;
 }
 
 .event-l2 {
     left: 30px;
-    top: 200px;
+    top: 230px;
 }
 
-/* Events for Paris (Start near 550,80 and 550,220) */
+/* Events for Paris (Shifted down +30) */
 .event-p1 {
-    left: 530px;
-    top: 60px;
+    left: 560px;
+    top: 90px;
 }
 
 .event-p2 {
-    left: 530px;
-    top: 200px;
+    left: 560px;
+    top: 230px;
 }
 
-/* USER - Icon Node (Near 540, 280) */
+/* USERS - Community Cluster (Right Side) */
 .node-user {
-    left: 520px;
-    top: 250px;
-    /* "Bien en évidence" - Emphasis */
+    /* Common User Styles */
     border-color: var(--primary);
     border-width: 3px;
     box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
     transform-origin: center bottom;
-    animation: userBounce 2s infinite ease-in-out;
+    animation: userBounce 3s infinite ease-in-out;
+    /* Slower bounce base */
     z-index: 20;
-    /* Ensure on top */
 }
 
 .node-user .eco-icon {
     color: var(--primary);
-    transform: scale(1.2);
-    /* Icon slightly larger */
+    transform: scale(1.1);
+}
+
+/* User 1 (Top) */
+.node-user-1 {
+    left: 680px;
+    top: 30px;
+    animation-delay: 0s;
+}
+
+/* User 2 */
+.node-user-2 {
+    left: 680px;
+    top: 90px;
+    animation-delay: 0.4s;
+}
+
+/* User 3 (Middle - With Label) */
+.node-user-3 {
+    left: 680px;
+    top: 150px;
+    animation-delay: 0.8s;
+}
+
+/* User 4 */
+.node-user-4 {
+    left: 680px;
+    top: 210px;
+    animation-delay: 1.2s;
+}
+
+/* User 5 (Bottom) */
+.node-user-5 {
+    left: 680px;
+    top: 270px;
+    animation-delay: 1.6s;
 }
 
 @keyframes userBounce {
@@ -588,22 +622,94 @@ body {
     }
 
     40% {
-        transform: translateY(-15px);
+        transform: translateY(-8px);
     }
 
     60% {
-        transform: translateY(-7px);
+        transform: translateY(-4px);
     }
 }
 
+0%,
+20%,
+50%,
+80%,
+100% {
+    transform: translateY(0);
+}
+
+40% {
+    transform: translateY(-15px);
+}
+
+60% {
+    transform: translateY(-7px);
+}
+}
+
 /* Responsive Scaling for Hero Diagram */
+/* Responsive Scaling for Hero Diagram - Optimized for 750px Width */
+@media (max-width: 850px) {
+    .hero-ecosystem {
+        transform: scale(0.8);
+        transform-origin: center top;
+        margin-bottom: -60px;
+    }
+}
+
 @media (max-width: 650px) {
     .hero-ecosystem {
-        transform: scale(0.7);
-        /* Scale down for tablets/small desktops */
+        transform: scale(0.55);
+        /* Fits 750px into ~412px */
         transform-origin: center top;
-        margin-bottom: -80px;
-        /* Reduce gap caused by scaling */
+        margin-bottom: -160px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero {
+        padding-top: 120px;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-ecosystem {
+        transform: scale(0.42);
+        /* Fits 750px into ~315px (small phones) */
+        transform-origin: center top;
+        margin-bottom: -200px;
+        left: -10px;
+        /* Slight nudge if needed */
+    }
+
+    .hero-content {
+        padding-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0;
+        line-height: 1.6 !important;
+        margin-bottom: 40px !important;
     }
 }
 
