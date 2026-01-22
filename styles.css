@@ -484,6 +484,39 @@ body {
 .node-user {
     left: 520px;
     top: 250px;
+    /* "Bien en évidence" - Emphasis */
+    border-color: var(--primary);
+    border-width: 3px;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+    transform-origin: center bottom;
+    animation: userBounce 2s infinite ease-in-out;
+    z-index: 20;
+    /* Ensure on top */
+}
+
+.node-user .eco-icon {
+    color: var(--primary);
+    transform: scale(1.2);
+    /* Icon slightly larger */
+}
+
+@keyframes userBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-7px);
+    }
 }
 
 @keyframes pulseHub {
