@@ -519,6 +519,33 @@ body {
     }
 }
 
+/* Responsive Scaling for Hero Diagram */
+@media (max-width: 650px) {
+    .hero-ecosystem {
+        transform: scale(0.7);
+        /* Scale down for tablets/small desktops */
+        transform-origin: center top;
+        margin-bottom: -80px;
+        /* Reduce gap caused by scaling */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-ecosystem {
+        transform: scale(0.5);
+        /* Scale down further for mobile */
+        transform-origin: center top;
+        margin-bottom: -140px;
+        left: -10px;
+        /* Slight optical adjustment */
+    }
+
+    .hero-content {
+        padding-bottom: 0 !important;
+        /* Remove excess padding if present */
+    }
+}
+
 @keyframes pulseHub {
 
     0%,
