@@ -385,8 +385,28 @@ body {
 }
 
 .problem-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EEF2FF;
+    /* Light indigo background */
+    color: var(--primary);
+    border-radius: 16px;
+    margin: 0 auto 24px;
+    transition: all 0.3s ease;
+}
+
+.problem-card:hover .problem-icon {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.problem-icon svg {
+    width: 32px;
+    height: 32px;
 }
 
 .problem-card h3 {
