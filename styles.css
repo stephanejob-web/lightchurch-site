@@ -364,13 +364,14 @@ body {
     animation: flowDash 4.5s linear infinite reverse;
 }
 
-/* The final beam to user needs to look faster/stronger */
+/* The final beam to user needs to be strong but slower */
 .flow-final {
     stroke-width: 4;
     stroke-dasharray: 20 50;
     /* Longer packet, shorter gap */
-    animation: flowDash 2.5s linear infinite reverse;
-    /* Hub to User */
+    animation: flowDash 4s linear infinite;
+    /* REMOVED reverse, Increased to 4s */
+    /* Hub to User (Hub is Start M..., User is End) */
     stroke: #F59E0B;
     /* Accent color for result */
     filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
