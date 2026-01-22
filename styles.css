@@ -1688,7 +1688,8 @@ body {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 120px;
+        padding-top: 100px;
+        gap: 40px;
     }
 
     .hero h1 {
@@ -1699,8 +1700,12 @@ body {
         margin: 0 auto 30px;
     }
 
-    .hero-buttons {
-        justify-content: center;
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image .iphone-mockup {
+        width: 240px;
     }
 
     .trust-badges {
@@ -1709,21 +1714,18 @@ body {
 
     .impact-flow {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
 
     .flow-arrow {
         transform: rotate(90deg);
-        animation: bounce-down 1s infinite;
+        animation: bounce-down 1.5s ease-in-out infinite;
     }
 
     @keyframes bounce-down {
-
-        0%,
-        100% {
+        0%, 100% {
             transform: rotate(90deg) translateX(0);
         }
-
         50% {
             transform: rotate(90deg) translateX(5px);
         }
@@ -1820,20 +1822,149 @@ body {
         display: flex;
     }
 
+    .hero {
+        padding-top: 90px;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
 
-    .section h2 {
-        font-size: 2rem;
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
 
-    .feature-info h3 {
-        font-size: 1.5rem;
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-image .iphone-mockup {
+        width: 220px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .section-intro {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .trust-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trust-badge {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .problem-card {
+        padding: 30px 25px;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .bento-large,
+    .bento-medium {
+        grid-column: span 1;
+    }
+
+    .bento-card {
+        padding: 30px 25px;
+    }
+
+    .bento-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .bento-number {
+        top: 25px;
+        right: 25px;
+        font-size: 0.75rem;
+    }
+
+    .flow-step {
+        min-width: 100%;
+        padding: 20px 25px;
+    }
+
+    .flow-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .flow-icon svg {
+        width: 24px;
+        height: 24px;
     }
 
     .benefits-columns {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .benefits-column {
+        padding: 30px 25px;
+    }
+
+    .network-card {
+        padding: 25px;
+    }
+
+    .privacy-card {
+        padding: 30px 25px;
+    }
+
+    .comparison-header,
+    .comparison-row {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        padding: 12px 10px;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .comparison-feature {
+        font-size: 0.8rem;
+    }
+
+    .feature-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .feature-info p {
+        font-size: 1rem;
+    }
+
+    .feature-gallery {
+        width: 100%;
+    }
+
+    .gallery-dots {
+        margin-top: 15px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 
     .footer-content {
@@ -1841,53 +1972,168 @@ body {
         gap: 15px;
         text-align: center;
     }
+
+    .summary-text {
+        font-size: 1.1rem;
+    }
+
+    .summary-tagline {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+    }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-top: 80px;
+        padding-bottom: 30px;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-image .iphone-mockup {
+        width: 200px;
     }
 
     .section {
-        padding: 60px 15px;
+        padding: 50px 15px;
     }
 
-    .problem-grid {
-        gap: 20px;
+    .section h2 {
+        font-size: 1.5rem;
     }
 
-    .screenshots-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+    .section-intro {
+        font-size: 0.95rem;
     }
 
-    .phone-mockup {
-        width: 130px;
+    .problem-card {
+        padding: 25px 20px;
     }
 
-    .phone-frame {
-        border-radius: 22px;
-        padding: 6px;
+    .problem-icon {
+        font-size: 2.5rem;
     }
 
-    .phone-screen {
-        border-radius: 18px;
+    .problem-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .problem-card p {
+        font-size: 0.9rem;
+    }
+
+    .bento-card {
+        padding: 25px 20px;
+    }
+
+    .bento-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .bento-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .bento-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .bento-card p {
+        font-size: 0.9rem;
+    }
+
+    .flow-step {
+        padding: 18px 20px;
+    }
+
+    .flow-step p {
+        font-size: 0.9rem;
+    }
+
+    .benefits-column {
+        padding: 25px 20px;
+    }
+
+    .benefits-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .benefits-list li {
+        font-size: 0.9rem;
+    }
+
+    .network-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .network-card p {
+        font-size: 0.9rem;
+    }
+
+    .privacy-card {
+        padding: 25px 20px;
+    }
+
+    .privacy-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .privacy-card p {
+        font-size: 0.9rem;
+    }
+
+    .privacy-comparison {
+        padding: 25px 15px;
+    }
+
+    .privacy-comparison h3 {
+        font-size: 1.2rem;
     }
 
     .iphone-mockup {
-        width: 220px;
+        width: 200px;
     }
 
-    .iphone-frame {
-        border-radius: 35px;
-        padding: 10px;
+    .iphone-mockup.mini {
+        width: 160px;
     }
 
-    .iphone-screen {
-        border-radius: 28px;
+    .mobile-gallery-track {
+        gap: 20px;
+        padding: 15px 15px 40px;
+    }
+
+    .gallery-item {
+        width: 160px;
+    }
+
+    .summary-text {
+        font-size: 1rem;
+    }
+
+    .summary-tagline {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    .footer-logo {
+        font-size: 1.1rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.85rem;
     }
 }
