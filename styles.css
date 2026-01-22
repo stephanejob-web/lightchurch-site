@@ -597,6 +597,133 @@ body {
     font-weight: bold;
 }
 
+/* Why Section */
+.section-why {
+    background: #ffffff;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.why-card {
+    padding: 40px 35px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.why-constat {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-color: #fecaca;
+}
+
+.why-opportunite {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-color: #bbf7d0;
+}
+
+.why-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.why-constat .why-header {
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.why-opportunite .why-header {
+    color: #16a34a;
+    border-color: #bbf7d0;
+}
+
+.why-header span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.why-list li {
+    font-size: 1.05rem;
+    color: var(--dark);
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+}
+
+.why-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.why-constat .why-list li::before {
+    background: #dc2626;
+}
+
+.why-opportunite .why-list li::before {
+    background: #16a34a;
+}
+
+.why-list li strong {
+    color: var(--dark);
+}
+
+.why-conclusion {
+    text-align: center;
+    padding: 35px 40px;
+    background: var(--dark);
+    border-radius: 16px;
+}
+
+.why-conclusion p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.why-conclusion strong {
+    color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .why-card {
+        padding: 30px 25px;
+    }
+
+    .why-conclusion {
+        padding: 25px 20px;
+    }
+
+    .why-conclusion p {
+        font-size: 1.1rem;
+    }
+}
+
 /* Network Section */
 .section-network {
     background: var(--dark);
