@@ -257,12 +257,274 @@ body {
     transform: translateY(-2px);
 }
 
-/* Trust Badges */
-.trust-badges {
+/* Hero Ecosystem Visualization */
+.hero-ecosystem {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    max-width: 450px;
+    /* Slightly wider for new layout */
+    margin: 30px 0 40px;
+}
+
+.eco-hub {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.eco-hub-core {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient);
+    border-radius: 50%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.6);
+    animation: pulseHub 3s infinite ease-in-out;
+    position: relative;
+    z-index: 2;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.hub-text {
+    color: white;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* HERO TOPOLOGY DIAGRAM (SVG Based) */
+.hero-ecosystem {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    /* Matched to SVG viewBox */
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* SVG Connections */
+.eco-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.eco-path {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 2;
+    stroke-dasharray: 8 4;
+    opacity: 0.6;
+}
+
+/* Flow Animation on Lines */
+.eco-path {
+    stroke-dasharray: 10;
+    animation: flowDash 30s linear infinite;
+}
+
+/* Specific Flows */
+.flow-final {
+    stroke: var(--primary);
+    stroke-width: 4;
+    stroke-dasharray: 10 5;
+    animation: flowDash 2s linear infinite reverse;
+    /* Flow TO user */
+    filter: drop-shadow(0 0 5px rgba(79, 70, 229, 0.5));
+}
+
+@keyframes flowDash {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
+/* NODES - Common */
+.eco-node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.eco-node:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.node-label {
+    position: absolute;
+    bottom: -25px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dark);
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.node-label-sm {
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.7rem;
+    color: var(--gray);
+    white-space: nowrap;
+}
+
+/* HUB (Center) */
+.eco-hub {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 300, 150 */
+    z-index: 3;
+}
+
+.eco-hub-core {
+    width: 110px;
+    height: 110px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+    border: 4px solid #fff;
+    animation: pulseHub 3s infinite ease-in-out;
+}
+
+.hub-text {
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* NODE PLACEMENT (Matching SVG Coordinates) */
+/* Hub is at 300, 150 */
+
+/* Lille: 100, 150 */
+.node-lille {
+    left: 80px;
+    top: 120px;
+}
+
+/* Toulon: 300, 50 */
+.node-toulon {
+    left: 270px;
+    top: 20px;
+}
+
+/* Reunion: 300, 250 */
+.node-reunion {
+    left: 270px;
+    /* 300 - 30 */
+    top: 220px;
+    /* 250 - 30 */
+}
+
+/* Paris: 480, 150 */
+.node-paris {
+    left: 450px;
+    top: 120px;
+}
+
+/* EVENTS - Smaller Nodes */
+.eco-node.node-event {
+    width: 40px;
+    height: 40px;
+    border-color: #CBD5E1;
+    /* Lighter border */
+}
+
+/* Events for Lille (Start near 50,80 and 50,220) */
+.event-l1 {
+    left: 30px;
+    top: 60px;
+}
+
+.event-l2 {
+    left: 30px;
+    top: 200px;
+}
+
+/* Events for Paris (Start near 550,80 and 550,220) */
+.event-p1 {
+    left: 530px;
+    top: 60px;
+}
+
+.event-p2 {
+    left: 530px;
+    top: 200px;
+}
+
+/* USER - Icon Node (Near 540, 280) */
+.node-user {
+    left: 520px;
+    top: 250px;
+}
+
+@keyframes pulseHub {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(79, 70, 229, 0.6);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(79, 70, 229, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flowBeam {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+/* Trust Badges - Hidden */
+.trust-badges {
+    display: none;
 }
 
 .trust-badge {

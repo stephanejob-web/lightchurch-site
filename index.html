@@ -43,36 +43,145 @@
                     <strong>LightChurch centralise tout</strong> : églises, horaires, événements. Visible par tous,
                     accessible en un clic.
                 </p>
-                <div class="trust-badges">
-                    <div class="trust-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 7h-9" />
-                            <path d="M14 17H5" />
-                            <circle cx="17" cy="17" r="3" />
-                            <circle cx="7" cy="7" r="3" />
-                        </svg>
-                        <span>Toute l'info centralisée</span>
+                <div class="hero-ecosystem">
+                    <!-- SVG Layer for precise connections -->
+                    <svg class="eco-connections" viewBox="0 0 600 300">
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"
+                                markerUnits="strokeWidth">
+                                <path d="M0,0 L0,6 L9,3 z" fill="#4F46E5" />
+                            </marker>
+                        </defs>
+                        <!-- Connections to Hub -->
+                        <path d="M120,150 L260,150" class="eco-path flow-right" /> <!-- Lille -> Hub -->
+                        <path d="M300,50 L300,110" class="eco-path flow-down" /> <!-- Toulon -> Hub -->
+                        <path d="M300,250 L300,190" class="eco-path flow-up" /> <!-- Reunion -> Hub -->
+                        <path d="M480,150 L340,150" class="eco-path flow-left" /> <!-- Paris -> Hub -->
+
+                        <!-- Connections from Events to Lille -->
+                        <path d="M50,80 C50,150 50,150 80,150" class="eco-path flow-curved" /> <!-- Event 1 -> Lille -->
+                        <path d="M50,220 C50,150 50,150 80,150" class="eco-path flow-curved" />
+                        <!-- Event 2 -> Lille -->
+
+                        <!-- Connections from Events to Paris -->
+                        <path d="M550,80 C550,150 550,150 520,150" class="eco-path flow-curved" />
+                        <!-- Event 3 -> Paris -->
+                        <path d="M550,220 C550,150 550,150 520,150" class="eco-path flow-curved" />
+                        <!-- Event 4 -> Paris -->
+
+                        <!-- Hub to User -->
+                        <path d="M300,150 C400,150 400,250 500,280" class="eco-path flow-user" style="display:none;" />
+                        <!-- Hidden old path attempt -->
+                        <path d="M340,160 C400,200 450,260 540,280" class="eco-path flow-final" />
+                    </svg>
+
+                    <!-- CENTRAL HUB -->
+                    <div class="eco-hub">
+                        <div class="eco-hub-core">
+                            <span class="hub-text">LightChurch</span>
+                        </div>
                     </div>
-                    <div class="trust-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+
+                    <!-- NODES (Positioning matches SVG points) -->
+                    <!-- Lille (Left) -->
+                    <div class="eco-node node-lille">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M8 2v4" />
-                            <path d="M16 2v4" />
-                            <rect width="18" height="18" x="3" y="4" rx="2" />
-                            <path d="M3 10h18" />
+                            <path d="M2 22h20" />
+                            <path d="M4 22V7l9-5 9 5v15" />
+                            <path d="M12 7v5" />
+                            <path d="M10 12h4" />
                         </svg>
-                        <span>Événements visibles instantanément</span>
+                        <span class="node-label">Église Lille</span>
                     </div>
-                    <div class="trust-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+
+                    <!-- Toulon (Top) -->
+                    <div class="eco-node node-toulon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 22h20" />
+                            <path d="M4 22V7l9-5 9 5v15" />
+                            <path d="M12 7v5" />
+                            <path d="M10 12h4" />
+                        </svg>
+                        <span class="node-label">Église Toulon</span>
+                    </div>
+
+                    <!-- Reunion (Bottom) -->
+                    <div class="eco-node node-reunion">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 22h20" />
+                            <path d="M4 22V7l9-5 9 5v15" />
+                            <path d="M12 7v5" />
+                            <path d="M10 12h4" />
+                        </svg>
+                        <span class="node-label">Église Réunion</span>
+                    </div>
+
+                    <!-- Paris (Right) -->
+                    <div class="eco-node node-paris">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 22h20" />
+                            <path d="M4 22V7l9-5 9 5v15" />
+                            <path d="M12 7v5" />
+                            <path d="M10 12h4" />
+                        </svg>
+                        <span class="node-label">Église Paris</span>
+                    </div>
+
+                    <!-- Events (Satellites) -->
+                    <div class="eco-node node-event event-l1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M2 12h20" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                        <span class="node-label-sm">Prière</span>
+                    </div>
+                    <div class="eco-node node-event event-l2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                            <line x1="16" x2="16" y1="2" y2="6" />
+                            <line x1="8" x2="8" y1="2" y2="6" />
+                            <line x1="3" x2="21" y1="10" y2="10" />
+                        </svg>
+                        <span class="node-label-sm">Soirée</span>
+                    </div>
+                    <div class="eco-node node-event event-p1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+                            <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+                            <circle cx="12" cy="12" r="2" />
+                            <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+                            <path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1" />
+                        </svg>
+                        <span class="node-label-sm">Jeûne</span>
+                    </div>
+                    <div class="eco-node node-event event-p2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                             <circle cx="9" cy="7" r="4" />
                             <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
-                        <span>Réseau pastoral national</span>
+                        <span class="node-label-sm">Conf.</span>
+                    </div>
+
+                    <!-- USER (Triangle) -->
+                    <div class="eco-user-triangle">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="user-label">Utilisateur</span>
                     </div>
                 </div>
             </div>
