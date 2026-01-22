@@ -167,9 +167,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const scrolled = (winScroll / height) * 100;
         progressBar.style.width = scrolled + "%";
 
-        // Hero Parallax Effect
+        // Hero Parallax Effect (Disable on mobile)
         const heroSection = document.querySelector('.hero');
-        if (heroSection && currentScrollY <= heroSection.offsetHeight) {
+        if (window.innerWidth > 768 && heroSection && currentScrollY <= heroSection.offsetHeight) {
             const heroContent = document.querySelector('.hero-content');
             const heroImage = document.querySelector('.hero-image');
             const heroCanvas = document.getElementById('hero-network-canvas');
@@ -183,6 +183,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Canvas moves even slower (0.1x) to stay "far away"
             if (heroCanvas) heroCanvas.style.transform = `translateY(${currentScrollY * 0.1}px)`;
+        } else if (window.innerWidth <= 768) {
+            // Reset transforms on mobile to ensure visibility
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) heroContent.style.transform = 'none';
         }
     });
 
