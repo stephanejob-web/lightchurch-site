@@ -434,8 +434,15 @@ body {
 }
 
 @keyframes bounce-right {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
 }
 
 .benefits-columns {
@@ -513,8 +520,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .network-header h2 {
@@ -555,8 +569,13 @@ body {
 }
 
 @keyframes glow {
-    0% { box-shadow: 0 0 40px rgba(79, 70, 229, 0.5); }
-    100% { box-shadow: 0 0 60px rgba(79, 70, 229, 0.8); }
+    0% {
+        box-shadow: 0 0 40px rgba(79, 70, 229, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 60px rgba(79, 70, 229, 0.8);
+    }
 }
 
 .network-hub span {
@@ -608,12 +627,37 @@ body {
     text-align: center;
 }
 
-.node-1 { top: 10%; left: 50%; transform: translateX(-50%); }
-.node-2 { top: 30%; right: 10%; }
-.node-3 { bottom: 30%; right: 10%; }
-.node-4 { bottom: 10%; left: 50%; transform: translateX(-50%); }
-.node-5 { bottom: 30%; left: 10%; }
-.node-6 { top: 30%; left: 10%; }
+.node-1 {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-2 {
+    top: 30%;
+    right: 10%;
+}
+
+.node-3 {
+    bottom: 30%;
+    right: 10%;
+}
+
+.node-4 {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-5 {
+    bottom: 30%;
+    left: 10%;
+}
+
+.node-6 {
+    top: 30%;
+    left: 10%;
+}
 
 /* Connection lines - CSS only */
 .network-visual::before {
@@ -630,8 +674,13 @@ body {
 }
 
 @keyframes rotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* Network Features */
@@ -933,9 +982,17 @@ body {
     border-radius: 50%;
 }
 
-.browser-button.red { background: #ff5f57; }
-.browser-button.yellow { background: #febc2e; }
-.browser-button.green { background: #28c840; }
+.browser-button.red {
+    background: #ff5f57;
+}
+
+.browser-button.yellow {
+    background: #febc2e;
+}
+
+.browser-button.green {
+    background: #28c840;
+}
 
 .browser-address {
     flex: 1;
@@ -1002,46 +1059,81 @@ body {
 
 /* Mobile Section */
 .section-mobile {
-    background: var(--light-gray);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    overflow: hidden;
+    padding-bottom: 0;
 }
 
-.mobile-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.mobile-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 60px;
     margin-top: 60px;
 }
 
-.mobile-video h3,
-.mobile-screenshots h3 {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    color: var(--dark);
+.mobile-main-display {
+    position: relative;
+    z-index: 10;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
 }
 
-/* iPhone Mockup */
+.mobile-main-display:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.mobile-main-display::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(40px);
+}
+
+/* Enhanced iPhone Mockup */
 .iphone-mockup {
     position: relative;
-    width: 280px;
+    width: 300px;
+    /* Slightly larger */
     margin: 0 auto;
+    border-radius: 55px;
+    background: #121212;
+    padding: 12px;
+    box-shadow:
+        0 0 0 2px #333,
+        0 0 0 4px #1a1a1a,
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        20px 0 50px rgba(0, 0, 0, 0.3);
 }
 
 .iphone-frame {
-    background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
-    border-radius: 45px;
-    padding: 12px;
-    box-shadow:
-        0 0 0 2px #1a1a1a,
-        0 0 0 4px #3a3a3a,
-        0 30px 60px rgba(0, 0, 0, 0.4),
-        inset 0 0 2px rgba(255, 255, 255, 0.1);
+    position: relative;
+    border-radius: 42px;
+    overflow: hidden;
+    background: #000;
 }
 
 .iphone-screen {
-    background: #000;
-    border-radius: 35px;
-    overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.iphone-screen video,
+.iphone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .iphone-notch {
@@ -1049,122 +1141,157 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 28px;
+    width: 100px;
+    height: 25px;
     background: #000;
-    border-radius: 0 0 20px 20px;
-    z-index: 10;
+    border-radius: 0 0 18px 18px;
+    z-index: 20;
 }
 
 .iphone-notch::before {
+    /* Camera */
     content: '';
     position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 6px;
+    top: 40%;
+    right: 20%;
+    width: 8px;
+    height: 8px;
     background: #1a1a1a;
-    border-radius: 3px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.1);
 }
 
 .iphone-notch::after {
+    /* Speaker */
     content: '';
     position: absolute;
-    top: 8px;
-    right: 20px;
-    width: 10px;
-    height: 10px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 4px;
     background: #1a1a1a;
-    border-radius: 50%;
+    border-radius: 2px;
 }
 
-.iphone-screen video,
-.iphone-screen img {
-    width: 100%;
-    display: block;
-}
-
-.iphone-home {
+.iphone-home-indicator {
     position: absolute;
     bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 5px;
-    background: #fff;
-    border-radius: 3px;
-    opacity: 0.8;
+    width: 120px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    z-index: 20;
 }
 
-/* Screenshots grid with iPhone mockups */
-.screenshots-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+/* Side buttons */
+.iphone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: -4px;
+    width: 4px;
+    height: 25px;
+    background: #2a2a2a;
+    border-radius: 2px 0 0 2px;
+}
+
+.iphone-mockup::after {
+    content: '';
+    position: absolute;
+    top: 140px;
+    left: -4px;
+    width: 4px;
+    height: 50px;
+    background: #2a2a2a;
+    border-radius: 2px 0 0 2px;
+}
+
+.iphone-power-btn {
+    position: absolute;
+    top: 110px;
+    right: -4px;
+    width: 4px;
+    height: 80px;
+    background: #2a2a2a;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Screenshots Gallery */
+.mobile-gallery-track {
+    display: flex;
+    overflow-x: auto;
     gap: 30px;
-    justify-items: center;
+    padding: 20px 20px 60px;
+    width: 100%;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+    -ms-overflow-style: none;
+    /* Hide scrollbar IE/Edge */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.phone-mockup {
-    position: relative;
-    width: 160px;
+.mobile-gallery-track::-webkit-scrollbar {
+    display: none;
 }
 
-.phone-frame {
-    background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
-    border-radius: 28px;
+.gallery-item {
+    flex: 0 0 auto;
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+
+.iphone-mockup.mini {
+    width: 200px;
+    border-radius: 35px;
     padding: 8px;
     box-shadow:
-        0 0 0 1px #1a1a1a,
-        0 0 0 2px #3a3a3a,
-        0 20px 40px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+        0 0 0 1px #333,
+        0 0 0 2px #1a1a1a,
+        0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.phone-frame:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow:
-        0 0 0 1px #1a1a1a,
-        0 0 0 2px #3a3a3a,
-        0 30px 60px rgba(0, 0, 0, 0.4);
+.iphone-mockup.mini .iphone-frame {
+    border-radius: 28px;
 }
 
-.phone-screen {
-    background: #000;
-    border-radius: 22px;
-    overflow: hidden;
-    position: relative;
+.iphone-mockup.mini .iphone-screen {
+    border-radius: 26px;
 }
 
-.phone-screen img {
-    width: 100%;
-    display: block;
-    cursor: pointer;
-}
-
-.phone-notch {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 18px;
-    background: #000;
-    border-radius: 0 0 14px 14px;
-    z-index: 10;
-}
-
-.phone-home {
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
+.iphone-mockup.mini .iphone-notch {
     width: 60px;
-    height: 4px;
-    background: #fff;
-    border-radius: 2px;
-    opacity: 0.7;
+    height: 18px;
+    border-radius: 0 0 12px 12px;
 }
+
+.iphone-mockup.mini .iphone-notch::before {
+    width: 5px;
+    height: 5px;
+}
+
+.iphone-mockup.mini .iphone-notch::after {
+    width: 25px;
+    height: 3px;
+}
+
+.iphone-mockup.mini .iphone-home-indicator {
+    width: 70px;
+    height: 3px;
+    bottom: 5px;
+}
+
+.iphone-mockup.mini::before,
+.iphone-mockup.mini::after,
+.iphone-mockup.mini .iphone-power-btn {
+    display: none;
+    /* Hide side buttons for mini to simplify */
+}
+
 
 /* Summary Section */
 .section-summary {
@@ -1313,8 +1440,15 @@ body {
     }
 
     @keyframes bounce-down {
-        0%, 100% { transform: rotate(90deg) translateX(0); }
-        50% { transform: rotate(90deg) translateX(5px); }
+
+        0%,
+        100% {
+            transform: rotate(90deg) translateX(0);
+        }
+
+        50% {
+            transform: rotate(90deg) translateX(5px);
+        }
     }
 
     .feature-block,
